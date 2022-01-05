@@ -1,5 +1,4 @@
 import styles from '../styles/Learn.module.css'
-import { useRouter } from 'next/router'
 
 const LearnCard = (post) => {
 

@@ -1,11 +1,9 @@
-import axios from 'axios'
 import { useRouter } from 'next/router'
 import styles from '../styles/Post.module.css'
 
 const post = () => {
     const { query } = useRouter()
     const id = query.id
-
     return (
         <div>
             {
