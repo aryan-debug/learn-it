@@ -6,14 +6,10 @@ const post = () => {
     const id = query.id
     return (
         <div>
-            {
-                post && (
-                    <div className={styles.post}>
-                        <h1>{post.title}</h1>
-                        <p>{post.body}</p>
-                    </div>
-                )
-            }
+            <div className={styles.post}>
+                <h1>{post.title}</h1>
+                <p>{post.body}</p>
+            </div>
         </div>
     )
 }
