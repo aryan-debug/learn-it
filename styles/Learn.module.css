@@ -1,0 +1,44 @@
+.card {
+    width: min(90%, 400px);
+    min-height: 300px;
+    background: whitesmoke;
+    border-radius: 1rem;
+    color: black;
+    cursor: pointer;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0 0 0 / 0.2);
+    transition: all cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.card:hover {
+    color: rgb(62, 59, 255);
+    transform: scale(1.05);
+}
+
+.description { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+
+.author {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.author img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    border: solid 2px black;
+}
