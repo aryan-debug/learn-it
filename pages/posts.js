@@ -5,24 +5,33 @@ import path from 'path'
 import styles from '../styles/Post.module.css'
 
 
-export default function Home({ data }) {
+export default function Home({ err }) {
+    console.log(err)
     return (
         <div className={styles.container}>
             <h1>Posts</h1>
-            <div className={styles.grid}>
+            {/*<div className={styles.grid}>
                 {data.map((post) => <LearnCard key={post.id} {...post} />)}
-            </div>
+            </div>*/}
+            {err}
         </div>
     )
 }
 
 export async function getServerSideProps() {
-    const fileContents = fs.readFileSync(path.join('posts', 'post1.md'))
-        .toString()
-    const { data } = matter(fileContents)
+    try {
+        const fileContents = fs.readFileSync(path.join('posts', 'post1.md'))
+            .toString()
+        const { data } = matter(fileContents)
+    } catch (err) {
+        return { props: { err } }
+    }
+    return { props: { err: 'there is none!' } }
+    /*
     return {
         props: {
             data: [data]
         }
     }
+    */
 }
