@@ -20,7 +20,6 @@ export async function getServerSideProps() {
     const files = fs.readdirSync(path.join('posts'))
 
     const post_metadata = files.map((filename) => {
-        filename.replace('md', '')
         const file = fs.readFileSync(path.join('posts', filename), 'utf8')
         const { data } = matter(file)
         return data
